@@ -193,6 +193,8 @@ void FillWithRandom(void *const ptr, size_t memlen){
 int main(int const argc, char const *const *const argv) {
     size_t const A_len = (argc == 1) ? 2048lu : (size_t)atoi(argv[1]);
     DATATYPE *A = (DATATYPE *)malloc(sizeof(DATATYPE) * A_len);
+    if (A == nullptr)
+        return EXIT_FAILURE;
     srand((unsigned int)time(NULL));
     FillWithRandom(A, A_len * sizeof(DATATYPE));
 
@@ -213,5 +215,6 @@ int main(int const argc, char const *const *const argv) {
     // printf("Массив после сорт-ки по убыванию   : ");
     // PrintArray(A, A_len);
 
+    free(A);
     return EXIT_SUCCESS;
 }

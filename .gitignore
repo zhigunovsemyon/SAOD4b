@@ -1,0 +1,7 @@
+.vs
+out
+.~lock*
+enc_temp_folder
+*.bkp
+*.tmp
+text.txt

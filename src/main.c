@@ -8,15 +8,15 @@
 // Тип данных, используемый в алгоритме
 #define DATATYPE long
 // Строка для вывода одного элемента в printf()
-#define PRINT_STR "%ld "
+#define PRINT_EL(iter) printf("%ld ", iter)
 
 // Однобайтовый тип данных
 typedef unsigned char byte;
 
 void PrintArray(DATATYPE const *const Arr, size_t const len) {
     for (size_t i = 0; i < len; i++)
-        printf(PRINT_STR, Arr[i]);
-
+        PRINT_EL(Arr[i]);
+        
     putchar('\n');
 }
 
